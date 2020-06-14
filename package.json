@@ -1,0 +1,22 @@
+{
+  "name": "confusion",
+  "version": "1.0.0",
+  "description": "This is a website for Ristorante Con Fusion",
+  "main": "index.html",
+  "scripts": {
+    "start": "npm run lite",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "lite": "lite-server"
+  },
+  "author": "Nahid Islam",
+  "license": "ISC",
+  "devDependencies": {
+    "bootstrap": "^4.5.0",
+    "lite-server": "^2.3.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://nahid_cste12@bitbucket.org/nahid_cste12/coursera-bootstrap-4.git"
+  },
+  "homepage": "https://bitbucket.org/nahid_cste12/coursera-bootstrap-4#readme"
+}
