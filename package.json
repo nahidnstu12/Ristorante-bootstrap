@@ -18,5 +18,11 @@
     "type": "git",
     "url": "git+https://nahid_cste12@bitbucket.org/nahid_cste12/coursera-bootstrap-4.git"
   },
-  "homepage": "https://bitbucket.org/nahid_cste12/coursera-bootstrap-4#readme"
+  "homepage": "https://bitbucket.org/nahid_cste12/coursera-bootstrap-4#readme",
+  "dependencies": {
+    "bootstrap-social": "^5.1.1",
+    "font-awesome": "^4.7.0",
+    "jquery": "^3.5.1",
+    "popper.js": "^1.16.1"
+  }
 }
