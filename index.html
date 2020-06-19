@@ -11,7 +11,7 @@
     <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.min.css">
     <link rel="stylesheet" href="node_modules/font-awesome/css/font-awesome.min.css">
     <link rel="stylesheet" href="node_modules/bootstrap-social/bootstrap-social.css">
-    <link href="style.css" rel="stylesheet">
+    <link href="css/styles.css" rel="stylesheet">
 
    <title>Ristorante Con Fusion</title>
 </head>
@@ -33,11 +33,12 @@
                 <li class="nav-item"><a class="nav-link" href="#"><span class="fa fa-list fa-lg"></span> Menu</a></li>
 
                 <li class="nav-item"><a class="nav-link" href="./contactus.html"><span class="fa fa-address-card fa-lg"></span> Contact</a></li>
-                <span class="navbar-text navbar-right" >
-                    <a data-toggle="modal" data-target="#loginModal">
-                    <span class="fa fa-sign-in"></span> Login</a>
-                </span>
+               
             </ul> 
+            <span class="navbar-text navbar-right" >
+                <a data-toggle="modal" id="login">
+                <span class="fa fa-sign-in"></span> Login</a>
+            </span>
         </div>           
         </div>
     </nav>
@@ -52,7 +53,7 @@
                     <img src="img/logo.png" class="img-fluid">
                 </div>
                 <div class="col-12 col-sm-4 align-self-center ">
-                    <a type="button"  class="btn btn-warning btn-lg ml-4 nav-link" href="#reserveTbl" data-target="#reserveTbl" data-toggle="tooltip" data-html="true" title="Or Call us at <br><strong>+852 12345678</strong>" data-placement="bottom">Rreserve Table</a>                    
+                    <a type="button"  class="btn btn-warning btn-lg ml-4 nav-link" id="reserveTbl" data-toggle="modal">Rreserve Table</a>                    
                 </div>
             </div>
         </div>
@@ -100,6 +101,12 @@
                     <a class="carousel-control-next" href="#mycarousel" role="button" data-slide="next">
                         <span class="carousel-control-next-icon"></span>
                     </a>
+                    <!-- buttongroup -->
+                    
+                        <button class="btn btn-danger btn-sm" id="carouselButton">
+                            <span id="carousel-button-icon" class="fa fa-pause"></span>
+                        </button>
+                   
                 </div>
              </div>
         </div>
@@ -166,65 +173,7 @@
             </div>
         </div>
     </div>
-    <div class="row row-content" id="reserveTbl">
-        <div class="col-sm-3"></div>
-        <div class="col-12 col-md-6">
-            <div class="card" >
-                <div class="card-header bg-warning text-white">
-                    Reserve Table
-                </div>
-                <div class="card-body">
-                    <div class="row">
-                    <div class="col-12 col-md-2">Number of Guests</div>
-                    <div class="col-12 col-md-8">
-                        <div class="form-check form-check-inline">
-                            <input class="form-check-input" type="radio" name="reservation" id="reserv1" value="option1">
-                            <label class="form-check-label">1</label>
-                        </div>
-                        <div class="form-check form-check-inline">
-                            <input class="form-check-input" type="radio" name="reservation" id="reserv2" value="option2">
-                            <label class="form-check-label">2</label>
-                        </div>
-                        <div class="form-check form-check-inline">
-                            <input class="form-check-input" type="radio" name="reservation" id="reserv3" value="option3">
-                            <label class="form-check-label">3</label>
-                        </div>
-                        <div class="form-check form-check-inline">
-                            <input class="form-check-input" type="radio" name="reservation" id="reserv4" value="option4">
-                            <label class="form-check-label">4</label>
-                        </div>
-                        <div class="form-check form-check-inline">
-                            <input class="form-check-input" type="radio" name="reservation" id="reserv5" value="option5">
-                            <label class="form-check-label">5</label>
-                        </div>
-                        <div class="form-check form-check-inline">
-                            <input class="form-check-input" type="radio" name="reservation" id="reserv6" value="option6">
-                            <label class="form-check-label">6</label>
-                        </div>                                                    
-                    </div>
-                </div>
-                <div class="row my-5">
-                    <div class="col-12 col-md-2">Date and Time</div>
-                    <div class="col-12 col-md-8">
-                        <form>
-                            <div class="form-row">
-                              <div class="col-12 col-sm">
-                                <input type="date" class="form-control" placeholder="Date">
-                              </div>
-                              <div class="col-12 col-sm ">
-                                <input type="time" class="form-control" placeholder="Time">
-                              </div>
-                            </div>
-                            <button type="submit" class="btn btn-primary mt-4">Reserve</button>
-                        </form>
-                    </div>
-                </div>
-            </div>
-
-            </div>
-        </div>
-        <div class="col-sm-3"></div>
-    </div>
+    
     <!-- Login Modal -->
     <div id="loginModal" class="modal fade" role="dialog">
         <div class="modal-dialog modal-lg" role="content">
@@ -262,6 +211,82 @@
             </div>
         </div>
     </div>
+
+    <!-- reserve modal -->
+    <div class="modal fade" id="reserveTblModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="exampleModalLabel">Reserve Table</h5>
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <div class="modal-body">
+                <div class="row">
+                    <div class="col-12 col-md-3">Number of Guests</div>
+                    <div class="col-12 col-md-8">
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="radio" name="reservation" id="reserv1" value="option1">
+                            <label class="form-check-label">1</label>
+                        </div>
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="radio" name="reservation" id="reserv2" value="option2">
+                            <label class="form-check-label">2</label>
+                        </div>
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="radio" name="reservation" id="reserv3" value="option3">
+                            <label class="form-check-label">3</label>
+                        </div>
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="radio" name="reservation" id="reserv4" value="option4">
+                            <label class="form-check-label">4</label>
+                        </div>
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="radio" name="reservation" id="reserv5" value="option5">
+                            <label class="form-check-label">5</label>
+                        </div>
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="radio" name="reservation" id="reserv6" value="option6">
+                            <label class="form-check-label">6</label></div>  
+
+                    </div>
+                </div>
+                <div class="row my-3">
+                    <div class="col-sm-3">Section</div>
+                    <div class="col-sm-8">
+                        <div class="btn-group btn-group-toggle" data-toggle="buttons">
+                            <label class="btn btn-success active">
+                              <input type="radio" name="options" id="option1" autocomplete="off" checked>Non-Smoking
+                            </label>
+                            <label class="btn btn-danger">
+                              <input type="radio" name="options" id="option2" autocomplete="off">Smoking
+                            </label>
+                            
+                          </div>
+                    </div>
+                </div>
+                <div class="row my-3">
+                    <div class="col-12 col-md-3">Date and Time</div>
+                    <div class="col-12 col-md-8">
+                        <form>
+                            <div class="form-row">
+                              <div class="col-12 col-sm">
+                                <input type="date" class="form-control" placeholder="Date">
+                              </div>
+                              <div class="col-12 col-sm ">
+                                <input type="time" class="form-control" placeholder="Time">
+                              </div>
+                            </div>
+                            <button type="button" class="btn btn-secondary mt-4" data-dismiss="modal">Cancel</button>
+                            <button type="submit" class="btn btn-primary mt-4">Reserve</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+          </div>
+        </div>
+      </div>
     <footer class="footer">
         <div class="container">
             <div class="row">             
@@ -307,9 +332,33 @@
      <script src="node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
      <script>
         $(document).ready(function(){
-            $('[data-toggle="tooltip"]').tooltip();
+            $("#carouselButton").click(function(){
+                if ($("#carouselButton").children("span").hasClass('fa-pause')) {
+                    $("#mycarousel").carousel('pause');
+                    $("#carouselButton").children("span").removeClass('fa-pause');
+                    $("#carouselButton").children("span").addClass('fa-play');
+                }
+                else if ($("#carouselButton").children("span").hasClass('fa-play')){
+                    $("#mycarousel").carousel('cycle');
+                    $("#carouselButton").children("span").removeClass('fa-play');
+                    $("#carouselButton").children("span").addClass('fa-pause');                    
+                }
+            });
+
+            // login
+            $("#login").click(function(){
+                $("#loginModal").modal("show");
+            });
+            // reserveTbl 
+            $("#reserveTbl").click(function(){
+                $("#reserveTblModal").modal("show");
+            });
         });
     </script>
+    <script>
+        
+    </script>
+     
 </body>
 
 </html>
